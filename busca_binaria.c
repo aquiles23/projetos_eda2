@@ -1,6 +1,40 @@
 #include<stdio.h>
 
+int procura(int busca, int *v,int tam){
+	int aux = 0;
+	if (v[divide(tam)] == busca){
+		return v[divide(tam)];
+	}
+	else if (v[divide(tam)]>busca){
+		while(1){
+			aux = divide(tam) - 1 - aux;
+			if (v[aux] == busca){
+				return v[aux];
+			}
+			else if (aux == 0){
+				printf("seu numero não foi encontrado \n");
+				free(v);
+				exit(0);
+			}
 
+		}
+	}
+	else if (v[divide(tam)]<busca){
+		while(1){
+			aux = divide(tam) + 1 + aux;
+			if (v[aux] == busca){
+				return v[aux];
+			}
+			else if (aux == tam - 1){
+				printf("seu numero não foi encontrado \n");
+				free(v);
+				exit(0);
+			}
+		}
+	}
+
+
+}
 
 int divide(int tam) {
 	int i;
@@ -31,7 +65,7 @@ void insertionSort(int* v, int tam) {
 }
 int main(int argc, char const *argv[])
 {
-	int i, *v, tam,valor_vetor, busca;
+	int i, *v, tam,valor_vetor, busca,resultado;
 	printf("insira o tamanho do vetor \n");
 	scanf("%d",&tam);
 	v = (int *) malloc(tam * sizeof(int));
@@ -48,8 +82,10 @@ int main(int argc, char const *argv[])
 	}
 	printf("insira o numero no qual deseja pesquisar \n");
 	scanf("%d",&busca);
-
-
+	
+	resultado = procura(busca, v,tam);
+	
+	printf("sua pesquisa retornou %d \n",resultado);
 	free (v);
 	return 0;
 }
