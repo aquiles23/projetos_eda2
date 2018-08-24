@@ -1,6 +1,18 @@
 #include<stdio.h>
 
 
+
+int divide(int tam) {
+	int i;
+	if(tam%2==0) {
+		i=tam/2;
+	}
+	else {
+		i=(tam+1)/2;
+	}
+	return i;
+}
+
 void insertionSort(int* v, int tam) {
 	int i, j, aux = 0;
 
@@ -19,7 +31,7 @@ void insertionSort(int* v, int tam) {
 }
 int main(int argc, char const *argv[])
 {
-	int i, *v, tam,valor_vetor;
+	int i, *v, tam,valor_vetor, busca;
 	printf("insira o tamanho do vetor \n");
 	scanf("%d",&tam);
 	v = (int *) malloc(tam * sizeof(int));
@@ -28,11 +40,16 @@ int main(int argc, char const *argv[])
 		scanf("%d",&valor_vetor);
 		v[i] = valor_vetor;
 	}
-
+	
 	insertionSort(v,tam);
+	// o trecho a seguir é para debugar o que ja foi feito
 	for(i=0;i<tam;i++){
-		printf("esse é o valor do vetor na posicao %d valor %d \n",i,v[i]);
+		printf("posicao do vetor: %d valor do vetor: %d \n",i,v[i]);
 	}
+	printf("insira o numero no qual deseja pesquisar \n");
+	scanf("%d",&busca);
+
+
 	free (v);
 	return 0;
 }
