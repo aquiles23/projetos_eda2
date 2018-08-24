@@ -4,4 +4,4 @@ José Aquiles Guedes de Rezende : 16/0010331
 
 data:24/08/2018
 
-     o sist3ma recebe um conjumto de valores do usuario e a seguir pede para ele digitar um numero para buscar ,apos buscar esse numero retorna ao usuario a posicao do numero escolhido , caso o numero nao esteja no vetor informa ao usuario 1ue o numero nao esta no vetor. para tanto o sistema utiza o insertion sort para ordenar o vetor e a busca binaria para buscar.feito no gcc 5.4
+     o sistema recebe um conjumto de valores do usuario e a seguir pede para ele digitar um numero para buscar ,após isso busca esse numero retorna ao usuario a posicao do numero escolhido , caso o numero não esteja no vetor informa ao usuario que o número não ésta no vetor. para tanto o sistema utiliza o insertion sort para ordenar o vetor e a busca binária para buscar.o programa foi feito no gcc 5.4
