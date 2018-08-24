@@ -1,1 +1,1 @@
-funcionou no gcc 5.4
+feito no gcc 5.4
