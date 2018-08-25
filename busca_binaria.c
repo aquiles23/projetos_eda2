@@ -1,5 +1,8 @@
 #include<stdio.h>
-
+void numeronaoencontrado(int * v){
+  printf("seu numero não foi encontrado \n");
+  free(v);
+}
 int procura(int busca, int *v,int tam){
 	int aux = 0;
 	if (v[divide(tam)] == busca){
@@ -11,9 +14,8 @@ int procura(int busca, int *v,int tam){
 			if (v[aux] == busca){
 				return v[aux];
 			}
-			else if (aux == 0){
-				printf("seu numero não foi encontrado \n");
-				free(v);
+       			else if (aux == 0){
+			        numeronaoencontrado(v);	
 				exit(0);
 			}
 
@@ -22,13 +24,11 @@ int procura(int busca, int *v,int tam){
 	else if (v[divide(tam)]<busca){
 		while(1){
 			aux = divide(tam) + 1 + aux;
-			if (v[aux] == busca){
-				return v[aux];
-			}
-			else if (aux == tam - 1){
-				printf("seu numero não foi encontrado \n");
-				free(v);
+			 if (aux == tam - 1 || aux> tam-1){
+                                numeronaoencontrado(v); 
 				exit(0);
+			}else if (v[aux] == busca){
+				return v[aux];
 			}
 		}
 	}
@@ -76,6 +76,8 @@ int main(int argc, char const *argv[])
 	}
 	
 	insertionSort(v,tam);
+        
+
 	// o trecho a seguir é para debugar o que ja foi feito
 	for(i=0;i<tam;i++){
 		printf("posicao do vetor: %d valor do vetor: %d \n",i,v[i]);
